@@ -97,17 +97,19 @@
 </li>
 <li><p>。。。</p>
 </li>
-<li><p>n、在进行n-1次不同的尝试后，发现一个很棒的博文<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangyijieonline/article/details/105360138">[Linux]Ubuntu 20.04换阿里源</a>。该文不仅仅是讲镜像源换成什么，而是提供了一个更换镜像源的通用方法。对比本文我发现了自己的问题：视频中使用的系统为Ubuntu 18.04，而我下载的是官网最新的Release Ubuntu 20.04版本，犯了系统与镜像源版本不匹配的问题。于是将sources.list文件改为</p>
+<li><p>n、在进行n-1次不同的尝试后，发现一个很棒的博文<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangyijieonline/article/details/105360138">[Linux]Ubuntu 20.04换阿里源</a>。该文不仅仅是讲镜像源换成什么，而是提供了一个更换镜像源的通用方法。对比本文我发现了自己的问题：视频中使用的系统为Ubuntu 18.04，而我下载的是官网最新的Release: Ubuntu 20.04版本，犯了系统与镜像源版本不匹配的错误。于是将sources.list文件改为</p>
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-security main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-updates main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-proposed main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-backports main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-security main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-updates main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
 
-<p>然后<code>sudo apt update``sudo apt upgrade</code>最后<code>sudo apt install hollywood</code>就OK啦！</p>
+<p>然后<code>sudo apt update``sudo apt upgrade</code>。</p>
+<p>最后<code>sudo apt install hollywood</code>成功！</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wangyijieonline/article/details/105360138">https://blog.csdn.net/wangyijieonline/article/details/105360138</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/03/15/[Linux]%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/" data-id="ckmaani3q00000s7k6ngv3sjc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/03/15/[Linux]%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/" data-id="ckmaav6on0000j87k0g1t7fzj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-%E4%B8%8B%E8%BD%BD%E6%BA%90/" rel="tag">Ubuntu; 下载源;</a></li></ul>
@@ -158,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/14/hello-world/" data-id="ckma2b6kh0000mg7k17rs46bx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/14/hello-world/" data-id="ckmaav6ow0003j87k5wqn9a7a" class="article-share-link">Share</a>
       
       
     </footer>
