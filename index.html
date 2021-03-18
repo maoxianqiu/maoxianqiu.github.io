@@ -148,6 +148,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vim使用小思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/">vim使用小思考</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/" class="archive-article-date">
+  	<time datetime="2021-03-18T03:19:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vim作为文本编辑器学习曲线比较陡峭，从这张图可以体现：</p>
+<p><a href="vim.jpg">vim</a></p>
+<p>它设计了一整套逻辑。</p>
+<p>在观察它的逻辑时发现点有趣的事。</p>
+<p>在给10~20行注释时，用<code>10,20s/^/#/g</code>注释成#、用<code>10,20s#^#//#g</code>注释成//都可。</p>
+<p>刚看到时感觉很折磨，这它喵的怎么记？</p>
+<p>观察了一下发现其实注释就是替换演变过来的。已知<code>s/old/new/g</code>是将old替换为new，^代表行首。那 <code>10,20s/^/#/g</code>无非就是将行首替换为#。那替换成//呢？试了一下<code>10,20s/^////g</code>，提示“有多余的尾部字符”。</p>
+<p><a href="testcode.png">testcode</a></p>
+<p>连续四个/无法判定哪两个之间是要替换的内容，这就产生了歧义。估摸着这就是设计逻辑世界需要避讳的不严谨。然后作者灵机一动，将#与/调个位，变成<code>10,20s#^#//#g</code>。</p>
+<p>嘿，成了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vim</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-[Linux]解决sources.list换成阿里源后安装失败的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

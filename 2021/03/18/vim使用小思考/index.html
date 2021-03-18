@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2021 | Hexo</title>
+  <title>vim使用小思考 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2021/index.html">
+  <meta name="description" content="vim作为文本编辑器学习曲线比较陡峭，从这张图可以体现： vim 它设计了一整套逻辑。 在观察它的逻辑时发现点有趣的事。 在给10~20行注释时，用10,20s&#x2F;^&#x2F;#&#x2F;g注释成#、用10,20s#^#&#x2F;&#x2F;#g注释成&#x2F;&#x2F;都可。 刚看到时感觉很折磨，这它喵的怎么记？ 观察了一下发现其实注释就是替换演变过来的。已知s&#x2F;old&#x2F;new&#x2F;g是将old替换为new，^代表行首。那 10,20s&#x2F;^&#x2F;#&#x2F;g无">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim使用小思考">
+<meta property="og:url" content="http://yoursite.com/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vim作为文本编辑器学习曲线比较陡峭，从这张图可以体现： vim 它设计了一整套逻辑。 在观察它的逻辑时发现点有趣的事。 在给10~20行注释时，用10,20s&#x2F;^&#x2F;#&#x2F;g注释成#、用10,20s#^#&#x2F;&#x2F;#g注释成&#x2F;&#x2F;都可。 刚看到时感觉很折磨，这它喵的怎么记？ 观察了一下发现其实注释就是替换演变过来的。已知s&#x2F;old&#x2F;new&#x2F;g是将old替换为new，^代表行首。那 10,20s&#x2F;^&#x2F;#&#x2F;g无">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-18T03:19:01.000Z">
+<meta property="article:modified_time" content="2021-03-18T07:28:09.595Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="vim">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -146,36 +151,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vim使用小思考" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/" class="archive-article-date">
-  	<time datetime="2021-03-18T03:19:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/">vim使用小思考</a>
+    <h1 class="article-title" itemprop="name">
+      vim使用小思考
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/" class="archive-article-date">
+  	<time datetime="2021-03-18T03:19:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vim作为文本编辑器学习曲线比较陡峭，从这张图可以体现：</p>
+<p><a href="vim.jpg">vim</a></p>
+<p>它设计了一整套逻辑。</p>
+<p>在观察它的逻辑时发现点有趣的事。</p>
+<p>在给10~20行注释时，用<code>10,20s/^/#/g</code>注释成#、用<code>10,20s#^#//#g</code>注释成//都可。</p>
+<p>刚看到时感觉很折磨，这它喵的怎么记？</p>
+<p>观察了一下发现其实注释就是替换演变过来的。已知<code>s/old/new/g</code>是将old替换为new，^代表行首。那 <code>10,20s/^/#/g</code>无非就是将行首替换为#。那替换成//呢？试了一下<code>10,20s/^////g</code>，提示“有多余的尾部字符”。</p>
+<p><a href="testcode.png">testcode</a></p>
+<p>连续四个/无法判定哪两个之间是要替换的内容，这就产生了歧义。估摸着这就是设计逻辑世界需要避讳的不严谨。然后作者灵机一动，将#与/调个位，变成<code>10,20s#^#//#g</code>。</p>
+<p>嘿，成了。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你这么好还喜欢我<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,57 +231,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/15/%5BLinux%5D%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-03-15T06:58:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/15/%5BLinux%5D%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[Linux]解决sources.list换成阿里源后安装失败的问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/15/%5BLinux%5D%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/">[Linux]解决sources.list换成阿里源后安装失败的问题</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Ubuntu; 下载源;</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -260,8 +353,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
