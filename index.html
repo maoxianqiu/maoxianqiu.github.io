@@ -148,20 +148,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-vim使用小思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vim-注释用法联想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/">vim使用小思考</a>
+      <a class="article-title" href="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/">[vim]注释用法联想</a>
     </h1>
   
 
         
-        <a href="/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/" class="archive-article-date">
-  	<time datetime="2021-03-18T03:19:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
+        <a href="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/" class="archive-article-date">
+  	<time datetime="2021-03-18T07:55:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
 </a>
         
       </header>
@@ -169,13 +169,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>vim作为文本编辑器学习曲线比较陡峭，从这张图可以体现：</p>
-<p><a href="vim.jpg">vim</a></p>
+<img src="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/vim.png" class="" title="This is an image">
+
 <p>它设计了一整套逻辑。</p>
 <p>在观察它的逻辑时发现点有趣的事。</p>
 <p>在给10~20行注释时，用<code>10,20s/^/#/g</code>注释成#、用<code>10,20s#^#//#g</code>注释成//都可。</p>
 <p>刚看到时感觉很折磨，这它喵的怎么记？</p>
 <p>观察了一下发现其实注释就是替换演变过来的。已知<code>s/old/new/g</code>是将old替换为new，^代表行首。那 <code>10,20s/^/#/g</code>无非就是将行首替换为#。那替换成//呢？试了一下<code>10,20s/^////g</code>，提示“有多余的尾部字符”。</p>
-<p><a href="testcode.png">testcode</a></p>
+<img src="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/testcode.png" class="" title="This is an image">
+
 <p>连续四个/无法判定哪两个之间是要替换的内容，这就产生了歧义。估摸着这就是设计逻辑世界需要避讳的不严谨。然后作者灵机一动，将#与/调个位，变成<code>10,20s#^#//#g</code>。</p>
 <p>嘿，成了。</p>
 
@@ -201,7 +203,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/18/vim%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%80%9D%E8%80%83/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/">展开全文 >></a>
         </p>
       
 
@@ -294,81 +296,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/15/%5BLinux%5D%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/14/hello-world/" class="archive-article-date">
-  	<time datetime="2020-08-13T16:16:51.501Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/hello-world/">展开全文 >></a>
         </p>
       
 

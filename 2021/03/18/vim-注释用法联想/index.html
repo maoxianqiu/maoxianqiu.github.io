@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Hexo</title>
+  <title>[vim]注释用法联想 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="vim作为文本编辑器学习曲线比较陡峭，从这张图可以体现：   它设计了一整套逻辑。 在观察它的逻辑时发现点有趣的事。 在给10~20行注释时，用10,20s&#x2F;^&#x2F;#&#x2F;g注释成#、用10,20s#^#&#x2F;&#x2F;#g注释成&#x2F;&#x2F;都可。 刚看到时感觉很折磨，这它喵的怎么记？ 观察了一下发现其实注释就是替换演变过来的。已知s&#x2F;old&#x2F;new&#x2F;g是将old替换为new，^代表行首。那 10,20s&#x2F;^&#x2F;#&#x2F;g无非就">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2020/08/14/hello-world/index.html">
+<meta property="og:title" content="[vim]注释用法联想">
+<meta property="og:url" content="http://yoursite.com/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="vim作为文本编辑器学习曲线比较陡峭，从这张图可以体现：   它设计了一整套逻辑。 在观察它的逻辑时发现点有趣的事。 在给10~20行注释时，用10,20s&#x2F;^&#x2F;#&#x2F;g注释成#、用10,20s#^#&#x2F;&#x2F;#g注释成&#x2F;&#x2F;都可。 刚看到时感觉很折磨，这它喵的怎么记？ 观察了一下发现其实注释就是替换演变过来的。已知s&#x2F;old&#x2F;new&#x2F;g是将old替换为new，^代表行首。那 10,20s&#x2F;^&#x2F;#&#x2F;g无非就">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-13T16:16:51.501Z">
-<meta property="article:modified_time" content="2020-08-13T16:16:51.502Z">
+<meta property="og:image" content="http://yoursite.com/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/vim.png">
+<meta property="og:image" content="http://yoursite.com/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/testcode.png">
+<meta property="article:published_time" content="2021-03-18T07:55:18.000Z">
+<meta property="article:modified_time" content="2021-03-18T07:57:32.773Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="vim">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/vim.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,39 +154,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vim-注释用法联想" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      [vim]注释用法联想
     </h1>
   
 
         
-        <a href="/2020/08/14/hello-world/" class="archive-article-date">
-  	<time datetime="2020-08-13T16:16:51.501Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+        <a href="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/" class="archive-article-date">
+  	<time datetime="2021-03-18T07:55:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p>vim作为文本编辑器学习曲线比较陡峭，从这张图可以体现：</p>
+<img src="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/vim.png" class="" title="This is an image">
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>它设计了一整套逻辑。</p>
+<p>在观察它的逻辑时发现点有趣的事。</p>
+<p>在给10~20行注释时，用<code>10,20s/^/#/g</code>注释成#、用<code>10,20s#^#//#g</code>注释成//都可。</p>
+<p>刚看到时感觉很折磨，这它喵的怎么记？</p>
+<p>观察了一下发现其实注释就是替换演变过来的。已知<code>s/old/new/g</code>是将old替换为new，^代表行首。那 <code>10,20s/^/#/g</code>无非就是将行首替换为#。那替换成//呢？试了一下<code>10,20s/^////g</code>，提示“有多余的尾部字符”。</p>
+<img src="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/testcode.png" class="" title="This is an image">
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>连续四个/无法判定哪两个之间是要替换的内容，这就产生了歧义。估摸着这就是设计逻辑世界需要避讳的不严谨。然后作者灵机一动，将#与/调个位，变成<code>10,20s#^#//#g</code>。</p>
+<p>嘿，成了。</p>
 
       
 
@@ -222,6 +225,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vim</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -272,7 +286,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/14/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,15 +300,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/15/%5BLinux%5D%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          [Linux]解决sources.list换成阿里源后安装失败的问题
-        
-      </div>
-    </a>
   
+    <a href="/2021/03/15/%5BLinux%5D%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[Linux]解决sources.list换成阿里源后安装失败的问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
