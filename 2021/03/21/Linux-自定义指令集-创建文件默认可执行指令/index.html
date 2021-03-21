@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>[Linux]自定义指令集--创建文件默认可执行指令 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="问题起源在学习shell编程时，使用visual studio code指令code出的shell文件保存后不是默认可执行。所以每新建一个shell文件执行前都要chmod u+x xxx.sh。这么做也太不酷了。 需求经过一系列配置操作后，能后一个指令code出的shell可以保存后直接运行。 解决过程 1、创建~&#x2F;zml&#x2F;MyCommand&#x2F;文件夹用于管理指令集。每条指令就是一个shell脚本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Linux]自定义指令集--创建文件默认可执行指令">
+<meta property="og:url" content="http://yoursite.com/2021/03/21/Linux-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E9%9B%86-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E9%BB%98%E8%AE%A4%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="问题起源在学习shell编程时，使用visual studio code指令code出的shell文件保存后不是默认可执行。所以每新建一个shell文件执行前都要chmod u+x xxx.sh。这么做也太不酷了。 需求经过一系列配置操作后，能后一个指令code出的shell可以保存后直接运行。 解决过程 1、创建~&#x2F;zml&#x2F;MyCommand&#x2F;文件夹用于管理指令集。每条指令就是一个shell脚本">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-21T15:04:58.000Z">
+<meta property="article:modified_time" content="2021-03-21T15:37:21.807Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux;shell;alias">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -146,16 +151,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Linux-自定义指令集-创建文件默认可执行指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Linux-自定义指令集-创建文件默认可执行指令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/21/Linux-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E9%9B%86-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E9%BB%98%E8%AE%A4%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%8C%87%E4%BB%A4/">[Linux]自定义指令集--创建文件默认可执行指令</a>
+    <h1 class="article-title" itemprop="name">
+      [Linux]自定义指令集--创建文件默认可执行指令
     </h1>
   
 
@@ -190,6 +193,37 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你这么好还喜欢我<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -208,16 +242,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/21/Linux-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E9%9B%86-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E9%BB%98%E8%AE%A4%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%8C%87%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/21/Linux-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E9%9B%86-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E9%BB%98%E8%AE%A4%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%8C%87%E4%BB%A4/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[vim]注释用法联想</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -237,185 +330,14 @@
 
 
 
-
   
-    <article id="post-vim-注释用法联想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/">[vim]注释用法联想</a>
-    </h1>
   
 
-        
-        <a href="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/" class="archive-article-date">
-  	<time datetime="2021-03-18T07:55:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>vim作为文本编辑器学习曲线比较陡峭，从这张图可以体现：</p>
-<img src="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/vim.png" class="" title="This is an image">
-
-<p>它设计了一整套逻辑。</p>
-<p>在观察它的逻辑时发现点有趣的事。</p>
-<p>在给10~20行注释时，用<code>10,20s/^/#/g</code>注释成#、用<code>10,20s#^#//#g</code>注释成//都可。</p>
-<p>刚看到时感觉很折磨，这它喵的怎么记？</p>
-<p>观察了一下发现其实注释就是替换演变过来的。已知<code>s/old/new/g</code>是将old替换为new，^代表行首。那 <code>10,20s/^/#/g</code>无非就是将行首替换为#。那替换成//呢？试了一下<code>10,20s/^////g</code>，提示“有多余的尾部字符”。</p>
-<img src="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/testcode.png" class="" title="This is an image">
-
-<p>连续四个/无法判定哪两个之间是要替换的内容，这就产生了歧义。估摸着这就是设计逻辑世界需要避讳的不严谨。然后作者灵机一动，将#与/调个位，变成<code>10,20s#^#//#g</code>。</p>
-<p>嘿，成了。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vim</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/18/vim-%E6%B3%A8%E9%87%8A%E7%94%A8%E6%B3%95%E8%81%94%E6%83%B3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[Linux]解决sources.list换成阿里源后安装失败的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/15/%5BLinux%5D%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/">[Linux]解决sources.list换成阿里源后安装失败的问题</a>
-    </h1>
   
 
-        
-        <a href="/2021/03/15/%5BLinux%5D%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-03-15T06:58:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>使用ubuntu系统时，为了提高下载速度，按照视频教程将/etc/apt/sources.list文件中的内容替换为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
-
-<p>使用<code>sudo apt install hollywood</code>安装软件时提示”无法修正错误，因为您要求某些软件包保持现状，就是它们破坏了软件包间的依赖关系。“</p>
-<h3 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h3><ul>
-<li><p>1、看打印日志。缺少哪个依赖就手动<code>sudo apt</code>哪个软件。后来发现依赖是一层套一层，手动安装不完。</p>
-</li>
-<li><p>2、寻求智能寻找依赖的方法。发现<code>sudo aptitude</code>会对依赖关系进行智能处理。尝试后发现依然报错。</p>
-</li>
-<li><p>。。。</p>
-</li>
-<li><p>n、在进行n-1次不同的尝试后，发现一个很棒的博文<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangyijieonline/article/details/105360138">[Linux]Ubuntu 20.04换阿里源</a>。该文不仅仅是讲镜像源换成什么，而是提供了一个更换镜像源的通用方法。对比本文我发现了自己的问题：视频中使用的系统为Ubuntu 18.04，而我下载的是官网最新的Release: Ubuntu 20.04版本，犯了系统与镜像源版本不匹配的错误。于是将sources.list文件改为</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-security main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-updates main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-proposed main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-backports main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-security main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-updates main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
-
-<p>然后<code>sudo apt update</code>、<code>sudo apt upgrade</code>。</p>
-<p>最后<code>sudo apt install hollywood</code>成功！</p>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wangyijieonline/article/details/105360138">https://blog.csdn.net/wangyijieonline/article/details/105360138</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Ubuntu; 下载源;</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/15/%5BLinux%5D%E8%A7%A3%E5%86%B3sources.list%E6%8D%A2%E6%88%90%E9%98%BF%E9%87%8C%E6%BA%90%E5%90%8E%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -438,8 +360,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
