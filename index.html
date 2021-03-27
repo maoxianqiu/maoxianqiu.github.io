@@ -148,6 +148,143 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-算法复盘（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/27/%E7%AE%97%E6%B3%95%E5%A4%8D%E7%9B%98%EF%BC%88%E4%B8%80%EF%BC%89/">算法复盘（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/27/%E7%AE%97%E6%B3%95%E5%A4%8D%E7%9B%98%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2021-03-27T15:04:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>来源：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/">LeetCode</a></p>
+<h3 id="1、两数之和"><a href="#1、两数之和" class="headerlink" title="1、两数之和"></a>1、两数之和</h3><p><strong>题目描述：</strong></p>
+<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [2,7,11,15], target &#x3D; 9</span><br><span class="line">输出：[0,1]</span><br><span class="line">解释：因为 nums[0] + nums[1] &#x3D;&#x3D; 9 ，返回 [0, 1] 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路：</strong></p>
+<p>借助unordered_map查找效率为O(1)的特性，设计<code>unordered_map&lt;int,int&gt; indies;</code>将<code>nums[i]</code>作为键， <code>i</code>作为值。将问题转化为求<code>target-nums[i]</code>是否是<code>indies</code>的键。</p>
+<hr>
+<h3 id="2、连续子数组最大和"><a href="#2、连续子数组最大和" class="headerlink" title="2、连续子数组最大和"></a>2、连续子数组最大和</h3><p><strong>题目描述：</strong></p>
+<p>输入一个整型数组，数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。</p>
+<p>要求时间复杂度为O(n)。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: nums &#x3D; [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">输出: 6</span><br><span class="line">解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。</span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路：</strong></p>
+<p>遍历数组往后加，同时更新最大值。问题的关键在于，当叠加出的和sum为负数时，前面n项和一定小于n+1项的和，所以可以将sum置为0重新叠加求和。</p>
+<hr>
+<h3 id="3、乘积最大子数组"><a href="#3、乘积最大子数组" class="headerlink" title="3、乘积最大子数组"></a>3、乘积最大子数组</h3><p><strong>题目描述：</strong></p>
+<p>给你一个整数数组 <code>nums</code> ，请你找出数组中乘积最大的连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [2,3,-2,4]</span><br><span class="line">输出: 6</span><br><span class="line">解释: 子数组 [2,3] 有最大乘积 6。</span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路：</strong></p>
+<p>存在两种特殊情况：1、除去负号，数组本身乘积最大。2、0将数据以0为分界线分段处理。</p>
+<p>因此，除了维护一个最大乘积的同时也要维护一个最小乘积。当取到负值时，将最大值与最小值交换再与该值相乘即得到最新的最大最小值。</p>
+<hr>
+<h3 id="4、买卖股票的最佳时机"><a href="#4、买卖股票的最佳时机" class="headerlink" title="4、买卖股票的最佳时机"></a>4、买卖股票的最佳时机</h3><p><strong>题目描述：</strong></p>
+<p>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。</p>
+<p>你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。</p>
+<p>返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：[7,1,5,3,6,4]</span><br><span class="line">输出：5</span><br><span class="line">解释：在第 2 天（股票价格 &#x3D; 1）的时候买入，在第 5 天（股票价格 &#x3D; 6）的时候卖出，最大利润 &#x3D; 6-1 &#x3D; 5 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路：</strong></p>
+<p>同时维护一个当前最小值和与当前最小值的差值最大值。在遍历数组时更新这两值即可。</p>
+<hr>
+<h3 id="5、字符串解码"><a href="#5、字符串解码" class="headerlink" title="5、字符串解码"></a>5、字符串解码</h3><p><strong>题目描述：</strong></p>
+<p>给定一个经过编码的字符串，返回它解码后的字符串。</p>
+<p>编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。</p>
+<p>你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。</p>
+<p>此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4] 的输入。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s &#x3D; &quot;3[a2[c]]&quot;</span><br><span class="line">输出：&quot;accaccacc&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路：</strong></p>
+<p>借用两个stack。一个存每层括号里的整数，一个存每层括号里的字符串。在遍历string时，存在以下四种情况：1、数字：向后累计整数；2、字母：向后累计字符串；3、[：两个stack压栈；4、]：两个stack弹栈。</p>
+<hr>
+<h3 id="6、最小栈"><a href="#6、最小栈" class="headerlink" title="6、最小栈"></a>6、最小栈</h3><p><strong>题目描述：</strong></p>
+<p>设计一个支持 <code>push</code> ，<code>pop</code> ，<code>top</code> 操作，并能在常数时间内检索到最小元素的栈。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">[&quot;MinStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;getMin&quot;,&quot;pop&quot;,&quot;top&quot;,&quot;getMin&quot;]</span><br><span class="line">[[],[-2],[0],[-3],[],[],[],[]]</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">[null,null,null,null,-3,null,0,-2]</span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路：</strong></p>
+<p>在经典stack的基础上多维护一个最小值栈，使得最小值栈的栈顶总是最小值。</p>
+<hr>
+<h3 id="7、队列的最大值"><a href="#7、队列的最大值" class="headerlink" title="7、队列的最大值"></a>7、队列的最大值</h3><p><strong>题目描述：</strong></p>
+<p>请定义一个队列并实现函数 max_value 得到队列里的最大值，要求函数max_value、push_back 和 pop_front 的均摊时间复杂度都是O(1)。</p>
+<p>若队列为空，pop_front 和 max_value 需要返回 -1</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: </span><br><span class="line">[&quot;MaxQueue&quot;,&quot;push_back&quot;,&quot;push_back&quot;,&quot;max_value&quot;,&quot;pop_front&quot;,&quot;max_value&quot;]</span><br><span class="line">[[],[1],[2],[],[],[]]</span><br><span class="line">输出: [null,null,null,2,1,2]</span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路：</strong></p>
+<p>在经典queue的基础上多维护一个双向队列deque，使得双向队列的头部总是最大值。注意要求均摊复杂度为O(1)，所以虽然某次插入可能会将很多元素从deque出队，但是总的出队元素数量是固定的，所以均摊下来是O(1)。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/27/%E7%AE%97%E6%B3%95%E5%A4%8D%E7%9B%98%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux-自定义指令集-创建文件默认可执行指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
